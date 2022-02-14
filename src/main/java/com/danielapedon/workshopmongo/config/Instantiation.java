@@ -8,9 +8,7 @@ import com.danielapedon.workshopmongo.repository.PostRepository;
 import com.danielapedon.workshopmongo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.amqp.AbstractRabbitListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ScopeMetadata;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
