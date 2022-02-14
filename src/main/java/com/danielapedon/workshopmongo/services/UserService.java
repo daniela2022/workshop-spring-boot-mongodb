@@ -1,6 +1,7 @@
 package com.danielapedon.workshopmongo.services;
 
 import com.danielapedon.workshopmongo.domain.User;
+import com.danielapedon.workshopmongo.dto.UserDTO;
 import com.danielapedon.workshopmongo.repository.UserRepository;
 import com.danielapedon.workshopmongo.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +24,13 @@ public class UserService {
         Optional<User> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
+
+    public User insert(User obj){
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDTO){
+        return new User(objDTO.getId(), objDTO.getName(), objDTO.getEmail());
+    }
+
 }
